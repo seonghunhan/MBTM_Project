@@ -1,0 +1,22 @@
+* DB 기존에 있던거 다 지우고 User테이블 새로 만들었습니다.
+* 기존 DB table 다 지워서 기존 DB Table이랑 연관된 
+자바 코드는 주석처리 했습니다.
+(/srs/user에 있는 UserController, UserDao, UserProvider, UserService)
+* 기존 주석되어있는 코드들은 안지워주셨으면 해요!(작성하실 코드들은 주석된 코드
+들보다 위에다 적어주시면 감사하겠습니다.)
+
+
+
+1. BaseResponseStatus.java 파일
+1.1) POST_USERS_UNMATCH_PASSWORD 추가
+- 회원가입할때 비밀번호, 비밀번호확인 두개가 다를경우 발생
+
+createdAt timestamp default CURRENT_TIMESTAMP
+updatedAt timestamp default CURRENT_TIMESTAMP
+
+2. 회원가입에서 전화번호 010-1234-5678 정규표현식을 맞추려면 데이터 타입을
+int가 아닌 String으로해야 합니다. int를 사용하기위해서는 정규표현식을 안쓰고
+01012345678으로 해야합니다
+
+
+https://www.dorisdev.shop/users/1
